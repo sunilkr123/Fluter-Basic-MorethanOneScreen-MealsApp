@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:more_than_one_screen/category_meals_screen.dart';
 import './category_screen.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MealDetails',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.pink,
           accentColor: Colors.amber,
       //    canvasColor: Color.fromARGB(255, 254, 229, 1),
           fontFamily: 'Raleway',
@@ -35,7 +36,12 @@ class MyApp extends StatelessWidget {
           //     titleLarge: TextStyle(fontFamily: 'RobotoCondensed', fontSize: 24),
           //     )
       ),
-      home: CategoryScreen(),
+      // home: CategoryScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (ctx) => CategoryScreen(),
+        CategoryMealScreen.routeName :(ctx)=> CategoryMealScreen()
+      },
     );
   }
 }
