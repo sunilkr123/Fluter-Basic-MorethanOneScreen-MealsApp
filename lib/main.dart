@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:more_than_one_screen/category_meals_screen.dart';
+import 'package:more_than_one_screen/screens/meal_details.dart';
 import './category_screen.dart';
 
 void main() {
@@ -40,38 +41,18 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (ctx) => CategoryScreen(),
-        CategoryMealScreen.routeName :(ctx)=> CategoryMealScreen()
+        CategoryMealScreen.routeName :(ctx)=> CategoryMealScreen(),
+       MealDetails.routeNamed: (ctx) => MealDetails()
       },
+
+       //this can be used when the pushed screen rout is not found
+      // onGenerateRoute: (settings) {
+      //   return MaterialPageRoute(builder: (ctx) => CategoryScreen(),);
+      // },
+      //this can be used when the pushed screen rout is not found
+     //  onUnknownRoute: (settings) {
+     //   return MaterialPageRoute(builder: (ctx) => CategoryScreen(),);
+     // },
     );
   }
 }
-/*
-*     displayLarge: displayLarge?.merge(other.displayLarge) ?? other.displayLarge,
-      displayMedium: displayMedium?.merge(other.displayMedium) ?? other.displayMedium,
-      displaySmall: displaySmall?.merge(other.displaySmall) ?? other.displaySmall,
-      headlineLarge: headlineLarge?.merge(other.headlineLarge) ?? other.headlineLarge,
-      headlineMedium: headlineMedium?.merge(other.headlineMedium) ?? other.headlineMedium,
-      headlineSmall: headlineSmall?.merge(other.headlineSmall) ?? other.headlineSmall,
-      titleLarge: titleLarge?.merge(other.titleLarge) ?? other.titleLarge,
-      titleMedium: titleMedium?.merge(other.titleMedium) ?? other.titleMedium,
-
-
-
-      *
-      bodySmall: bodySmall?.merge(other.bodySmall) ?? other.bodySmall,
-      labelLarge: labelLarge?.merge(other.labelLarge) ?? other.labelLarge,
-      labelMedium: labelMedium?.merge(other.labelMedium) ?? other.labelMedium,
-      labelSmall: labelSmall?.merge(other.labelSmall) ?? other.labelSmall
-* */
-// class MyHomePage extends StatefulWidget {
-//   @override
-//   State<MyHomePage> createState() => _MyHomePageState();
-// }
-//
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//      return Scaffold(appBar: AppBar(title: Text('MealDetails'),),
-//      body: Center(child: Text('Demo app'),),);
-//   }
-// }
