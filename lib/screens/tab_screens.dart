@@ -32,28 +32,32 @@ class _TabBarScreenState extends State<TabBarScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Tab App Demo'),
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  icon: Icon(Icons.category),
-                  text: 'Categories',
-                ),
-                Tab(
-                  icon: Icon(Icons.favorite),
-                  text: 'Favourite',
-                )
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(_pages[_selectedPageIndex]['title'] as String),
+      ),
+      body: _pages[_selectedPageIndex]['page'] as Widget,
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: _selectPage,
+        backgroundColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Colors.white,
+        selectedItemColor: Theme.of(context).accentColor,
+        currentIndex: _selectedPageIndex,
+        // type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
+            icon: Icon(Icons.category),
+            label:  'Categories',
           ),
-          body: TabBarView(children: [
-            CategoryScreen(),
-            FavouriteScreen()
-          ]),
-        ));
+          BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
+            icon: Icon(Icons.star),
+            label:  'Favorites',
+          ),
+
+        ],
+      ),
+    );
   }
 }
