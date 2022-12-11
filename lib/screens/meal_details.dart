@@ -14,7 +14,6 @@ class MealDetails extends StatelessWidget {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     final id = ModalRoute
@@ -34,7 +33,7 @@ class MealDetails extends StatelessWidget {
       ),
         buildSectionTitle(context, 'Ingradients'),
         Container(
-          height:  300,
+         // height:  300,
           width:  double.infinity,
           decoration: BoxDecoration(
             color: Colors.white,
@@ -52,27 +51,23 @@ class MealDetails extends StatelessWidget {
               ),
             );
           },
-          itemCount: selectedMeal.ingredients.length,),
+          itemCount: selectedMeal.ingredients.length,
+          physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+          ),
         ),
         buildSectionTitle(context, 'Steps'),
         Container(
-          height:  300,
+         // height:  300,
           width:   double.infinity,
           decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.grey),
               borderRadius: BorderRadius.circular(10)
           ),
-          margin: EdgeInsets.all(10),
+          margin: EdgeInsets.symmetric(horizontal: 10),
           padding: EdgeInsets.all(10),
           child: ListView.builder(itemBuilder: (ctx, index) {
-            // return Card(
-            //   color: Theme.of(context).accentColor,
-            //   child: Padding(
-            //     padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-            //     child: Text(selectedMeal.steps[index]),
-            //   ),
-            // );
             return ListTile(
               leading: CircleAvatar(
                 child: Text('#${index+1}') ,
@@ -80,7 +75,9 @@ class MealDetails extends StatelessWidget {
               title: Text(selectedMeal.steps[index]),
             );
           },
-            itemCount: selectedMeal.steps.length,),
+            itemCount: selectedMeal.steps.length,
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,),
         ),
       ],
       ),

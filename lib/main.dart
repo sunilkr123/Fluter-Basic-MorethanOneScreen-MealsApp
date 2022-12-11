@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:more_than_one_screen/category_meals_screen.dart';
 import 'package:more_than_one_screen/screens/meal_details.dart';
+import './screens/tab_screens.dart';
 import './category_screen.dart';
 
 void main() {
@@ -40,11 +41,10 @@ class MyApp extends StatelessWidget {
       // home: CategoryScreen(),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => CategoryScreen(),
+        '/': (ctx) => TabBarScreen(),//CategoryScreen(),
         CategoryMealScreen.routeName :(ctx)=> CategoryMealScreen(),
        MealDetails.routeNamed: (ctx) => MealDetails()
       },
-
        //this can be used when the pushed screen rout is not found
       // onGenerateRoute: (settings) {
       //   return MaterialPageRoute(builder: (ctx) => CategoryScreen(),);
