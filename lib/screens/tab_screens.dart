@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:more_than_one_screen/category_screen.dart';
 import 'package:more_than_one_screen/screens/favourite_screen.dart';
-
+import './main_drawers.dart';
 class TabBarScreen extends StatefulWidget {
   const TabBarScreen({Key? key}) : super(key: key);
 
@@ -36,6 +36,7 @@ class _TabBarScreenState extends State<TabBarScreen> {
       appBar: AppBar(
         title: Text(_pages[_selectedPageIndex]['title'] as String),
       ),
+      drawer: MainDrawer(),
       body: _pages[_selectedPageIndex]['page'] as Widget,
       bottomNavigationBar: BottomNavigationBar(
         onTap: _selectPage,

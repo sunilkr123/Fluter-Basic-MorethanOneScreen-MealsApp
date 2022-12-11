@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:more_than_one_screen/category_meals_screen.dart';
-import 'package:more_than_one_screen/screens/meal_details.dart';
+import './category_meals_screen.dart';
+import './screens/filter_screen.dart';
+import './screens/meal_details.dart';
 import './screens/tab_screens.dart';
 import './category_screen.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       //title: 'MealDetails',
       theme: ThemeData(
           primarySwatch: Colors.pink,
-          accentColor: Colors.amber,
+          accentColor: Colors.cyan,
       //    canvasColor: Color.fromARGB(255, 254, 229, 1),
           fontFamily: 'Raleway',
           // textTheme: ThemeData.light().textTheme.copyWith(
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx) => TabBarScreen(),//CategoryScreen(),
         CategoryMealScreen.routeName :(ctx)=> CategoryMealScreen(),
-       MealDetails.routeNamed: (ctx) => MealDetails()
+        MealDetails.routeNamed: (ctx) => MealDetails(),
+        FilterScreen.routeNamed: (ctx) => FilterScreen()
       },
        //this can be used when the pushed screen rout is not found
       // onGenerateRoute: (settings) {
